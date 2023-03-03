@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">guias</string>
+    <string name="app_name"> Guias</string>
+    <string name="action_search">Buscar</string>
+    <string name="action_setting">Configuración</string>
 </resources>
