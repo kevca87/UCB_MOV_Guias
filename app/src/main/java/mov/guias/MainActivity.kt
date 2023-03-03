@@ -6,17 +6,32 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.snackbar.Snackbar
+
 class MainActivity : AppCompatActivity() {
     private val toolBar: Toolbar
         get() = findViewById(R.id.toolbar)
+
+    private val btnSnackbar : Button
+        get() = findViewById(R.id.btnSnackbar)
+
+    private val layoutPrincipal: ConstraintLayout
+        get() = findViewById(R.id.layoutPrincipal)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         supportActionBar.let {
             setSupportActionBar(toolBar)
+        }
+
+        btnSnackbar.setOnClickListener {
+            val mySnackbar = Snackbar.make(findViewById(R.id.layoutPrincipal), R.string.app_name, Snackbar.LENGTH_LONG)
+            mySnackbar.setAction(R.string.undo_string, MyUndoListener())
+            mySnackbar.show()
         }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -33,4 +48,5 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
