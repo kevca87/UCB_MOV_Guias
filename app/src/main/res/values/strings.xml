@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">guias</string>
+    <string name="app_name">Guias 1 - 6</string>
+    <string name="btn_dark">Dark</string>
+    <string name="btn_light">Light</string>
 </resources>
